@@ -53,9 +53,8 @@
    While theoretically this simplification is useful for the development of simple 
    algorithms, in practice, the real world models will have these delays present. 
    Developing algorithms without taking delays into account could potentially have 
-   drastic consequences when implemented in the real world. This paper examines a 
-   reinforcement learning algorithm that takes these delays into account. 
-   To-do: insert results
+   drastic consequences when implemented in the real world. This paper examines
+   our own implementation of an algorithm shown in [1]. To-do insert results 
 %The abstract paragraph should be indented 1/2~inch (3~picas) on both left and
 %right-hand margins. Use 10~point type, with a vertical spacing of 11~points.
 %The word \textbf{Abstract} must be centered, bold, and in point size 12. Two
@@ -70,6 +69,17 @@ in the algorithm. This is accomplished by the agent applying a buffer of actions
 environment at a given time. This allows the agent to supply multiple actions in case of a 
 large delay occurring. However, if observations arrive from the environment this buffer of 
 actions will be updated based upon the new observations received.
+
+The git repository provided by [1] included wrappers around the Mujoco [reference] environments.
+These wrappers add various different types of random delays to both actions and observations to/
+from the environment. 
+There are different type of wrappers for different delays including real world measured 
+internet delays.
+When we implemented our own version of the code we reused these wrappers.
+
+\subsection{Algorithm Description}
+
+To-do
 
 \section{Recreating The Algorithm}
 
