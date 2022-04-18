@@ -66,22 +66,56 @@
 
 \section{Introduction}
 
-The algorithm proposed in [1] includes the concerns of random delays being considered
-in the algorithm. This is accomplished by the agent applying a buffer of actions on the
-environment at a given time. This allows the agent to supply multiple actions in case of a 
-large delay occurring. However, if observations arrive from the environment this buffer of 
-actions will be updated based upon the new observations received.
-
-The git repository provided by [1] included wrappers around the Mujoco [reference] environments.
-These wrappers add various different types of random delays to both actions and observations to/
-from the environment. 
+The algorithm examined in this report is a reinforcement learning algorithm.
+More precisely, the algorithm is a Random Delay Markov Decision Process (RDMDP) that uses an 
+off-policy algorithm. 
+The code provided by [1] includes this algorithm as well as  wrappers around the Mujoco environments.
+These wrappers add various different types of random delays to both actions and observations to/from 
+the environment. 
 There are different type of wrappers for different delays including real world measured 
-internet delays.
-When we implemented our own version of the code we reused these wrappers.
+internet delays. 
+The maximum and minimum delay are adjustable by configuring the environment. 
+When considering reinforcement learning in a delayed environment the model considered in [1]
+has an agent that interacts with an environment that is not delayed through a delayed medium as shown in figure \ref{environmentImage}.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.2]{images/fig1FromPaper}
+\end{center}
+\caption{Example Environment [1]}
+\label{environmentImage}
+\end{figure}
+
+The Mujoco environments are reinforcement learning environments in which the AI learns in
+various different configurations. 
+The environments tested in [1] include the Ant, HalfCheetah, Walker2d, Hopper, Humanoid,
+Reacher. 
+These environments test various multijoint configurations in a physics engine figure \ref{mujoco_Humanoid} 
+shows an example environment controlled by the agent.
+The reinforcement learning algorithm's goal is to have the configurations walk or move in a 
+particular direction achieving the highest reward. 
+Requiring the AI to apply forces or torques on the joints to control the movement of the body 
+[gymlibrary.ml/environments/mujoco].
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.2]{images/mujoco_humanoid_static}
+\end{center}
+\caption{Mujoco Humanoid [https://www.gymlibrary.ml/environments/mujoco/humanoid/]}
+\label{mujoco_Humanoid}
+\end{figure}
 
 \subsection{Algorithm Description}
 
-The algorithm proposed keeps track of a buffer of actions ...
+A basic description of the algorithm is that the agent produces a buffer of actions instead of a 
+single action. 
+This allows the environment to continue to act on the actions even if a random delay happens to be large.
+The buffer of actions is updated to ensure that the actions that would take the environment off policy
+are appropriately adjusted to attempt to make the environment on policy again once more.
+These adjustments must take into account all current information which includes the current delays in 
+the state to/from the environment for actions and observations respectively.
+The following figure \ref{imageExplainAlorithm} shows an example update being 
+performed on the buffer of actions.
 
 \begin{figure}[H]
 \begin{center}
@@ -89,8 +123,11 @@ The algorithm proposed keeps track of a buffer of actions ...
 %\fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
 \includegraphics[scale=0.2]{images/fig4FromPaper}
 \end{center}
-\caption{Sample figure caption.}
+\caption{Image Explaining Algorithm [1]}
+\label{imageExplainAlorithm}
 \end{figure}
+
+To-do explain algorithm better
 
 \section{Recreating The Algorithm}
 
@@ -142,7 +179,7 @@ We would like to acknowledge -- PROF and TA I guess
       "Reinforcement learning with random delays," arXiv.org, 04-may-2021. [Online]. 
       Available: https://arxiv.org/abs/2010.02966. [Accessed: 01-Apr-2022].
 
-[2] To-do reference number 2
+[2] To-do reference number 2 gymlibrary.ml/environments/mujoco
 
 [3] To-do reference number 3
 }
