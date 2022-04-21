@@ -58,8 +58,9 @@
    While theoretically this simplification is useful for the development of simple 
    algorithms, in practice, the real world models will have these delays present. 
    Developing algorithms without taking delays into account could potentially have 
-   drastic consequences when implemented in the real world. This paper examines
-   our own implementation of an algorithm shown in [1]. To-do insert results 
+   drastic consequences when implemented in the real world. 
+   This report examines the results of running the DCAC algorithm proposed in [1] on 
+   6 different Mujoco environments.
 %The abstract paragraph should be indented 1/2~inch (3~picas) on both left and
 %right-hand margins. Use 10~point type, with a vertical spacing of 11~points.
 %The word \textbf{Abstract} must be centered, bold, and in point size 12. Two
@@ -83,7 +84,7 @@ has an agent that interacts with an environment that is not delayed through a de
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.2]{images/fig1FromPaper}
+\includegraphics[scale=0.18]{images/fig1FromPaper}
 \end{center}
 \caption{Example Environment [1]}
 \label{environmentImage}
@@ -117,18 +118,16 @@ The buffer of actions is updated to ensure that the actions that would take the 
 are appropriately adjusted to attempt to make the environment on policy again once more.
 These adjustments must take into account all current information which includes the current delays in 
 the state to/from the environment for actions and observations respectively.
-The following figure \ref{imageExplainAlorithm} shows an example update being 
-performed on the buffer of actions.
 
-\begin{figure}[H]
-\begin{center}
-%\framebox[4.0in]{$\;$}
-%\fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-\includegraphics[scale=0.2]{images/fig4FromPaper}
-\end{center}
-\caption{Image Explaining Algorithm [1]}
-\label{imageExplainAlorithm}
-\end{figure}
+%\begin{figure}[H]
+%\begin{center}
+%%\framebox[4.0in]{$\;$}
+%%\fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+%\includegraphics[scale=0.2]{images/fig4FromPaper}
+%\end{center}
+%\caption{Image Explaining Algorithm [1]}
+%\label{imageExplainAlorithm}
+%\end{figure}
 
 \subsection{Real World Implications}
 
@@ -227,13 +226,19 @@ With these results, we can extrapolate the use of the RLRD algorithm for many po
 \label{totalLossDelay}
 \end{figure}
 
+Figure \ref{totalLossLong} shows that with a smaller delay the loss decreases gradually over training.
+Figure \ref{totalLossDelay} shows that with a larger delay the loss is significantly, but all decreases gradually over training.
+This shows that with larger delays the expected results decrease with the same amount of training.
+
 \section{Contributions}
 
 \begin{multicols}{2}
 
 \subsection{Todor Baljak}
 \begin{itemize}[itemsep=-2pt,topsep=-5pt, leftmargin=10pt]
-\item 
+\item Ran Simulations
+\item Wrote sections of report
+\item Proofread report
 \end{itemize}
 
 \subsection{Kaj Grant-Mathiasen}
@@ -245,7 +250,10 @@ With these results, we can extrapolate the use of the RLRD algorithm for many po
 
 \subsection{Dakota Crozier}
 \begin{itemize}[itemsep=-2pt,topsep=-5pt, leftmargin=10pt]
-\item 
+\item Formatted graphics
+\item Helped import Mujoco and gym libraries
+\item Ran Simulations
+\item Debugging simulation errors
 \end{itemize}
 
 \columnbreak
@@ -253,16 +261,19 @@ With these results, we can extrapolate the use of the RLRD algorithm for many po
 \subsection{David Bechert}
 \begin{itemize}[itemsep=-2pt,topsep=-5pt, leftmargin=10pt]
 \item Set up initial LaTeX paper
-\item Wrote initial abstract and introduction sections of paper
+\item Wrote abstract and intro to report
 \item Wrote algorithm section of paper
 \item Made code for producing plots of data
 \item Added images to report
 \item Analyzed repository code
+\item Added to result section
 \end{itemize}
 
 \subsection{Jake Lancaster}
 \begin{itemize}[itemsep=-2pt,topsep=-5pt, leftmargin=10pt]
-\item 
+\item Ran Simulations
+\item Wrote sections of report
+\item Proofread report
 \end{itemize} 
 
 \end{multicols}
