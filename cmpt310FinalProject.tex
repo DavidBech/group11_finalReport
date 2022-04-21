@@ -97,13 +97,13 @@ shows an example environment controlled by the agent.
 The reinforcement learning algorithm's goal is to have the configurations walk or move in a 
 particular direction achieving the highest reward. 
 Requiring the AI to apply forces or torques on the joints to control the movement of the body 
-[gymlibrary.ml/environments/mujoco].
+[2].
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.2]{images/mujoco_humanoid_static}
 \end{center}
-\caption{Mujoco Humanoid [https://www.gymlibrary.ml/environments/mujoco/humanoid/]}
+\caption{Mujoco Humanoid [2]}
 \label{mujoco_Humanoid}
 \end{figure}
 
@@ -143,12 +143,15 @@ performed on the buffer of actions.
 
 Creating an algorithm specifically for stochastic processes provides straightforward connections to real-world applications. The DCAC algorithmic approach to solving uncertainties pertaining to random delays can be implemented in a variety of scenarios. For example, communication between a decision making computer and a remote robot will be affected by the medium in which they communicate. Wifi is commonly used for this purpose and corresponds to an average delay of roughly 20-40ms as shown in figure \ref{wifiHistogram}. This proposed algorithm is also incredibly useful for autonomous car applications where any delay related inaccuracies can have extreme consequences. Image, face, or object recognition and identification software in scientific or security applications could also benefit from this algorithm due to the varying additional processing required for each unique input.
 
-\section{Analyzing the Code Provided By [1]}
+\section{Google Collab implementation}
 
 The code provided by [1] includes an implementation of the algorithm described 
 in section \ref{Introduction}.
 Additionally, it also included a soft actor critic algorithm and wrappers around
-the Mujoco environments.
+the Mujoco environments. 
+To implement our own runs of the DCAC algorithm in Google Collab we imported the code provided by [1],
+installed necessary dependency files, then defined and ran our own tests.
+After the tests ran they output a statistics file which we read and with mathplotlib produced graphs of the results.
 
 \section{Results}
 
@@ -247,7 +250,7 @@ Baiyu Li, Qiushi Lin, and Tiange Wan for their support with this project.
       "Reinforcement learning with random delays," arXiv.org, 04-may-2021. [Online]. 
       Available: https://arxiv.org/abs/2010.02966. [Accessed: 01-Apr-2022].
 
-[2] To-do reference number 2 gymlibrary.ml/environments/mujoco
+[2] Gym Documentation. [Online]. Available: https://www.gymlibrary.ml/environments/mujoco/. [Accessed: 20-Apr-2022]. 
 
 [3] To-do reference number 3
 }
