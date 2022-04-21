@@ -4,6 +4,7 @@
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{wrapfig}
 %\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
 
 
@@ -131,9 +132,17 @@ To-do explain algorithm better
 
 \subsection{Real World Implications}
 
-Creating an algorithm specifically for stochastic processes provides straightforward connections to real-world applications. The DCAC algorithmic approach to solving uncertainties pertaining to random delays can be implemented in a variety of scenarios. For example, communication between a decision making computer and a remote robot will be affected by the medium in which they communicate. Wifi is commonly used for this purpose and corresponds to an average delay of roughly 20-40ms. This proposed algorithm is also incredibly useful for autonomous car applications where any delay related inaccuracies can have extreme consequences. Image, face, or object recognition and identification software in scientific or security applications could also benefit from this algorithm due to the varying additional processing required for each unique input.
+\begin{figure}[H]
+\begin{center}
+%\framebox[4.0in]{$\;$}
+%\fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+\includegraphics[scale=1]{images/wifilatency.png}
+\end{center}
+\caption{Wifi delay histogram  [1]}
+\label{wifiHistogram}
+\end{figure}
 
-To-do : edit this and add more + images
+Creating an algorithm specifically for stochastic processes provides straightforward connections to real-world applications. The DCAC algorithmic approach to solving uncertainties pertaining to random delays can be implemented in a variety of scenarios. For example, communication between a decision making computer and a remote robot will be affected by the medium in which they communicate. Wifi is commonly used for this purpose and corresponds to an average delay of roughly 20-40ms as shown in figure \ref{wifiHistogram}. This proposed algorithm is also incredibly useful for autonomous car applications where any delay related inaccuracies can have extreme consequences. Image, face, or object recognition and identification software in scientific or security applications could also benefit from this algorithm due to the varying additional processing required for each unique input.
 
 \section{Analyzing the Code Provided By [1]}
 
