@@ -156,9 +156,16 @@ After the tests ran they output a statistics file which we read and with mathplo
 
 \section{Results}
 
-Training of these models required a significant amount of computing power. Therefore, the steps to train the model had to be reduced. We used a total of 15,000 steps to receive preliminary results where a strong inference can be made thereafter. Each test consisted of 5 epochs, 5 rounds, and 500 steps per round. The delay corresponded to a minimum of 1 and a maximum delay of 3 for both observation and action. We also tested our model with a learning rate of 3E-4, a discount of 0.99, and a loss alpha of 0.2. We re-ran the humanoid test for 10 rounds each with 1000 steps.
-
-After running a total of  6 tests, we have received robust and concise results for 15,000 steps. The results clearly illustrate that our delay-correcting actor critic found greatly successful results on a problem set which consisted of smaller points of contact with the ground, along with the amount of joints on a model. This can be seen on tests “Half cheetah,” “Humanoid,” and “Walker”. It was observed, however, that the DCAC had varying success in tests that contained more point of contact with the ground, and a smaller number of joints. “Hopper” and “Reacher”  are prime examples of this shortfall. This was a result observed due to the limited steps the model was trained for. When we run the longer humanoid test, we can observe that the total loss decreases with more steps.
+Training of these models required a significant amount of computing power. 
+Therefore, the steps to train the model had to be reduced. 
+We used a total of 15,000 steps to receive preliminary results where a strong inference can be made thereafter. 
+Each test consisted of 5 epochs, 5 rounds, and 500 steps per round. 
+The delay corresponded to a minimum of 1 and a maximum delay of 3 for both observation and action. 
+We also tested our model with a learning rate of 3E-4, a discount of 0.99, and a loss alpha of 0.2. 
+The runs for each of the different Gym Mujoco environments can be seen in figure \ref{averageReturn} and \ref{totalLoss}.
+To get a better understand of how the algorithm performs over a longer training time we re-ran the humanoid test for 10 rounds each with 1000 steps, this can be seen in figures \ref{averageReturnLong} and \ref{totalLossLong}.
+Finally, we ran the algorithm on different timing parameters increasing the minimum delays to 3 and the maximum delays to 5.
+These longer delays were run on the increased length of training.
 
 \begin{figure}[H]
 \begin{center}
@@ -175,6 +182,18 @@ After running a total of  6 tests, we have received robust and concise results f
 \caption{Total loss of DCAC with increasing epochs [1]}
 \label{totalLoss}
 \end{figure}
+
+After running a total of 6 shorter tests, we have received the results for 15,000 steps. 
+The results clearly illustrate that our delay-correcting actor critic found greatly successful results on a problem set which consisted of smaller points of contact with the ground, along with the amount of joints on a model. 
+This can be seen on tests “Half cheetah,” “Humanoid,” and “Walker”. 
+It was observed, however, that the DCAC had varying success in tests that contained more point of contact with the ground, and a smaller number of joints. 
+“Hopper” and “Reacher”  are prime examples of this shortfall. 
+This was a result observed due to the limited steps the model was trained for. 
+When we run the longer humanoid test, we can observe that the total loss decreases with more steps.
+
+Each graph however, establishes a solid uptrend in performance, and with more steps to train our agents, would eventually lead to more efficient movement and reward. 
+Overall, the DCAC was able to determine efficient movements in the Mujoco models and datasets used, and illustrated the power of reinforcement learning with random delays. 
+With these results, we can extrapolate the use of the RLRD algorithm for many potential cases in the real world.
 
 \begin{figure}[H]
 \begin{center}
@@ -207,10 +226,6 @@ After running a total of  6 tests, we have received robust and concise results f
 \caption{Total loss of DCAC on human with increasing epochs and larger delay [1]}
 \label{totalLossDelay}
 \end{figure}
-
-
-Each graph however, establishes a solid uptrend in performance, and with more steps to train our agents, would eventually lead to more efficient movement and reward. Overall, the DCAC was able to determine efficient movements in the mujoco models and datasets used, and illustrated the power of reinforcement learning with random delays. With these results, we can extrapolate the use of the RLRD algorithm for many potential cases in the real world.
-\\
 
 \section{Contributions}
 
