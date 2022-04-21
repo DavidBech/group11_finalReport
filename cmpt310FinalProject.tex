@@ -170,7 +170,7 @@ These longer delays were run on the increased length of training.
 \begin{center}
 \includegraphics[scale=0.8]{images/average_return.png}
 \end{center}
-\caption{Average return of DCAC with increasing epochs [1]}
+\caption{Average return of DCAC with increasing epochs}
 \label{averageReturn}
 \end{figure}
 
@@ -178,7 +178,7 @@ These longer delays were run on the increased length of training.
 \begin{center}
 \includegraphics[scale=0.8]{images/total_loss.png}
 \end{center}
-\caption{Total loss of DCAC with increasing epochs [1]}
+\caption{Total loss of DCAC with increasing epochs}
 \label{totalLoss}
 \end{figure}
 
@@ -198,7 +198,7 @@ With these results, we can extrapolate the use of the RLRD algorithm for many po
 \begin{center}
 \includegraphics[scale=0.4]{images/longer_human_reward.png}
 \end{center}
-\caption{Average return of DCAC on human with increasing epochs and larger steps [1]}
+\caption{Average return of DCAC on human with increasing epochs and larger steps}
 \label{averageReturnLong}
 \end{figure}
 
@@ -206,7 +206,7 @@ With these results, we can extrapolate the use of the RLRD algorithm for many po
 \begin{center}
 \includegraphics[scale=0.4]{images/longer_human_loss.png}
 \end{center}
-\caption{Total loss of DCAC on human with increasing epochs and larger steps [1]}
+\caption{Total loss of DCAC on human with increasing epochs and larger steps}
 \label{totalLossLong}
 \end{figure}
 
@@ -214,7 +214,7 @@ With these results, we can extrapolate the use of the RLRD algorithm for many po
 \begin{center}
 \includegraphics[scale=0.3]{images/delay_human_reward.png}
 \end{center}
-\caption{Average return of DCAC on human with increasing epochs and larger delay [1]}
+\caption{Average return of DCAC on human with increasing epochs and larger delay}
 \label{averageReturnDelay}
 \end{figure}
 
@@ -222,13 +222,17 @@ With these results, we can extrapolate the use of the RLRD algorithm for many po
 \begin{center}
 \includegraphics[scale=0.3]{images/delay_human_loss.png}
 \end{center}
-\caption{Total loss of DCAC on human with increasing epochs and larger delay [1]}
+\caption{Total loss of DCAC on human with increasing epochs and larger delay}
 \label{totalLossDelay}
 \end{figure}
 
 Figure \ref{totalLossLong} shows that with a smaller delay the loss decreases gradually over training.
 Figure \ref{totalLossDelay} shows that with a larger delay the loss is significantly, but all decreases gradually over training.
 This shows that with larger delays the expected results decrease with the same amount of training.
+
+\section{Conclusion}
+
+To conclude, we review the goals set to be accomplished by the initial paper as well as our own implementation and results. While DCAC was explicitly discussed and explored within this paper, the theoretical analysis can be applied to a wide family of algorithms. DCAC is derived from the concept that partially resampling previous observations can generate an accurate multi-step value estimation. This can be applied to scenarios involving random delays and will typically give significantly better results compared with a comparable Soft Actor Critic algorithm. It was proven theoretically that DCAC performs better due to its ability to collect off-policy trajectories and still use on-policy multi-step estimators without bias. As shown in our implementation of the algorithm, we can confirm these theoretical findings. Although we had significantly fewer experimental steps, we were still able to draw meaningful results proving the power of this algorithm. Finally, we explored how we can extrapolate from our experimental findings to real-world applications, and apply the general methodology that resulted in the DCAC algorithm to several areas. Overall, this project provided us with an insight on the inner workings of an algorithm with many applications pertinent to our daily lives, as well as interesting experience with testing environments such as the OpenAi Mujoco gym.
 
 \section{Contributions}
 
@@ -278,9 +282,7 @@ This shows that with larger delays the expected results decrease with the same a
 
 \end{multicols}
 
-\section{Conclusion}
 
-To conclude, we review the goals set to be accomplished by the initial paper as well as our own implementation and results. While DCAC was explicitly discussed and explored within this paper, the theoretical analysis can be applied to a wide family of algorithms. DCAC is derived from the concept that partially resampling previous observations can generate an accurate multi-step value estimation. This can be applied to scenarios involving random delays and will typically give significantly better results compared with a comparable Soft Actor Critic algorithm. It was proven theoretically that DCAC performs better due to its ability to collect off-policy trajectories and still use on-policy multi-step estimators without bias. As shown in our implementation of the algorithm, we can confirm these theoretical findings. Although we had significantly fewer experimental steps, we were still able to draw meaningful results proving the power of this algorithm. Finally, we explored how we can extrapolate from our experimental findings to real-world applications, and apply the general methodology that resulted in the DCAC algorithm to several areas. Overall, this project provided us with an insight on the inner workings of an algorithm with many applications pertinent to our daily lives, as well as interesting experience with testing environments such as the OpenAi Mujoco gym.
 
 
 \subsubsection*{Acknowledgments}
