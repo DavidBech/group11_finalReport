@@ -6,6 +6,7 @@
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{multicol}
+\usepackage{subfigure}
 %\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
 
 
@@ -177,21 +178,39 @@ After running a total of  6 tests, we have received robust and concise results f
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.3]{images/longer_human_reward.png}
+\includegraphics[scale=0.4]{images/longer_human_reward.png}
 \end{center}
 \caption{Average return of DCAC on human with increasing epochs and larger steps [1]}
-\label{humanLongerReturn}
+\label{averageReturnLong}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.3]{images/longer_human_loss.png}
+\includegraphics[scale=0.4]{images/longer_human_loss.png}
 \end{center}
 \caption{Total loss of DCAC on human with increasing epochs and larger steps [1]}
-\label{humanLongerLoss}
+\label{totalLossLong}
 \end{figure}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{images/delay_human_reward.png}
+\end{center}
+\caption{Average return of DCAC on human with increasing epochs and larger delay [1]}
+\label{averageReturnDelay}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{images/delay_human_loss.png}
+\end{center}
+\caption{Total loss of DCAC on human with increasing epochs and larger delay [1]}
+\label{totalLossDelay}
+\end{figure}
+
+
 Each graph however, establishes a solid uptrend in performance, and with more steps to train our agents, would eventually lead to more efficient movement and reward. Overall, the DCAC was able to determine efficient movements in the mujoco models and datasets used, and illustrated the power of reinforcement learning with random delays. With these results, we can extrapolate the use of the RLRD algorithm for many potential cases in the real world.
+\\
 
 \section{Contributions}
 
