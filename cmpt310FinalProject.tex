@@ -131,11 +131,7 @@ To-do explain algorithm better
 
 \subsection{Real World Implications}
 
-A major strength of this algorithm comes from the fact that it is extremely useful for real-world applications in which there is almost always a stochastic process.
-As referenced in the paper, this algorithmic approach to solving uncertainties pertaining to random delays can be implemented in a variety of scenarios.
-For example, communication between a decision making computer and a remote robot will be affected by the medium in which they communicate. Wifi is commonly used for this purpose and corresponds to an average delay of roughly 20-40ms.
-This proposed algorithm is also incredibly useful for autonomous car applications where any delay related inaccuracies can have extreme consequences.
-Image, face, or object recognition and identification software in scientific or security applications could also benefit from this algorithm due to the varying additional processing required for each unique input.
+Creating an algorithm specifically for stochastic processes provides straightforward connections to real-world applications. The DCAC algorithmic approach to solving uncertainties pertaining to random delays can be implemented in a variety of scenarios. For example, communication between a decision making computer and a remote robot will be affected by the medium in which they communicate. Wifi is commonly used for this purpose and corresponds to an average delay of roughly 20-40ms. This proposed algorithm is also incredibly useful for autonomous car applications where any delay related inaccuracies can have extreme consequences. Image, face, or object recognition and identification software in scientific or security applications could also benefit from this algorithm due to the varying additional processing required for each unique input.
 
 To-do : edit this and add more + images
 
@@ -183,7 +179,15 @@ Wow, look at the stuff Jake did
 
 \section{Conclusion}
 
-We conclude ...
+To conclude, we review the goals set to be accomplished by the initial paper as well as our own implementation, modifications, and results. While DCAC was explicitly discussed and explored within this paper, the theoretical analysis can be applied to a wide family of algorithms. DCAC is derived from the concept that partially resampling previous observations can generate an accurate multi-step value estimation. This can be applied to scenarios involving random delays and will typically give significantly better results compared with a comparable Soft Actor Critic algorithm. It was proven theoretically that DCAC performs better due to its ability to collect off-policy trajectories and still use on-policy multi-step estimators without bias. 
+
+We can prove these theoretical findings with our own results using the provided codebase. As derived in our discussion of the implementation,... 
+
+Our results show that….
+
+We can then extrapolate from our experimental findings to real-world applications, and apply the general methodology that resulted in the DCAC algorithm to several areas. Overall, this project provided us with an insight on the inner workings of an algorithm with many applications pertinent to our daily lives, as well as interesting experience with testing environments such as the OpenAi Mujoco gym.
+
+
 
 \subsubsection*{Acknowledgments}
 We would like to acknowledge our CMPT 310 professor Nafiseh Sedaghat and our TAs 
